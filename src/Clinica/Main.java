@@ -5,7 +5,8 @@ public class Main {
         Animal[] animales={
                 new Perro("Negra",5,"Cristian","Criolla","POL-PERRO-001"),
                 new Gato("Sancha",2,"Isabel", true, "POL-GATO-001"),
-                new Ave("Volador",1,"Maria",0.7)//Mayusc para nombrar las clases y no variables
+                new Ave("Volador",1,"Maria",0.7), //Mayusc para nombrar las clases y no variables
+                new Conejo("Pastel",2,"David")
         };
         for (Animal animal : animales){
             animal.imprimirFicha();
