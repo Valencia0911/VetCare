@@ -13,7 +13,7 @@ public abstract class Animal {
 
     public abstract double calcularCostoConsulta();
 
-    public void mostrarFicha(){
+    public void imprimirFicha(){
         System.out.println("Ficha: "+this.nombre);
         System.out.println("Edad: "+this.edad);
         System.out.println("Dueno: "+this.dueno);

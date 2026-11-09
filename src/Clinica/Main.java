@@ -1,13 +1,36 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+package Clinica;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+public class Main {
+    public static void main(String[] args) {
+        Animal[] animales={
+                new Perro("Negra",5,"Cristian","Criolla","POL-PERRO-001"),
+                new Gato("Sancha",2,"Isabel", true, "POL-GATO-001"),
+                new Ave("Volador",1,"Maria",0.7)//Mayusc para nombrar las clases y no variables
+        };
+        for (Animal animal : animales){
+            animal.imprimirFicha();
+        }
+        Perro perro = (Perro) animales[0]; //esta forma de sacar la posicion es estatica
+        Gato gato = (Gato) animales[1];
+
+        perro.registrarVacuna("Rabia");
+        perro.registrarVacuna("Moquillo");
+        gato.registrarVacuna("Sida");
+
+        System.out.println(perro.getVacunasAplicadas());
+        System.out.println(gato.getVacunasAplicadas());
+
+
+        Clinica clinica= new Clinica("Vetcare","Medellín");
+        Asegurable[] asegurables={
+                perro,
+                gato,
+                clinica
+        };
+        for(Asegurable asegurable : asegurables){
+            System.out.println(asegurable.obtenerNumeroPoliza());
+            System.out.println(asegurable.calcularPrimaSeguro());
+        }
+        //Se entrega hasta el 3er punto del 5to;
     }
 }
